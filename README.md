@@ -1,1 +1,3 @@
-# shopping-cart
+# shopping-cart example
+
+# shopping_cart.py
