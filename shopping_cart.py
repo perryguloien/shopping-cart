@@ -66,9 +66,9 @@ for product_id in product_ids:
     total_price = total_price + matching_product["price"]
     print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
 
-def to_usd(total_price):
-    print("TOTAL PRICE: " + str(total_price)) #Format as USD!
-    return f"${my_price:,.2f}" #> $12,000.71
+#def to_usd(total_price):
+print("TOTAL PRICE: " + str(to_usd(total_price))) #Format as USD!
+    # return f"${total_price:,.2f}" #> $12,000.71
 
 
 
