@@ -1,5 +1,5 @@
 #shopping-cart.py
-import time #use time module for the receipt
+from datetime import datetime #help from programiz.com
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -44,14 +44,17 @@ total_price = 0
 product_ids = []
 matching_products = []
 # ASK FOR USER INPUT
-store_name = input("Please enter your name here!")
-store_name = str.title(store_name+"'s Grocery Store")
+player_name = input("Please enter your name here! ")
+store_name = (str.title(player_name)+"'s Grocery Store")
+# DATE TIME SETUP: 
+now = datetime.now()
+dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
 
-print("Welcome to "+ store_name + "! When you are ready to checkout please enter 'DONE' instead of a product identifier.")
+print("Welcome to "+ store_name + "! When you are ready to checkout please enter 'DONE' instead of a product identifier. ")
 
 product_ids = []
 while True: 
-    product_id = input("Please input a product indentifier.") #> "9" (string)
+    product_id = input("Please input a product indentifier. ") #> "9" (string)
     #> "DONE"
     if product_id == "DONE":
         break
@@ -75,11 +78,15 @@ for product_id in product_ids:
 #FORMATTING AND PRINTING RECEIPT
 print("---------------------------------")
 print(str.upper(store_name))
-print(str.upper("WWW."+store_name+"'S-GROCERY_STORE.COM"))
+print(str.upper("WWW."+player_name+"S-GROCERY-STORE.COM"))
 print("---------------------------------")
-print("CHECKOUT AT: "+time())
+print("CHECKOUT AT: "+dt_string)
 print("---------------------------------")
-
+print("SELECTED PRODUCTS:")
+for product_id in product_ids:
+    matching_products = [p for p in products if str(p["id"]) == str(product_id)]
+    matching_product = matching_products[0]
+    print("... " + str(matching_product["name"]) + " " + "("+str(to_usd(matching_product["price"])+")"))
 
 print("TOTAL PRICE: " + str(to_usd(total_price))) #Format as USD!
     # return f"${total_price:,.2f}" #> $12,000.71
