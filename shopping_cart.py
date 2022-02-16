@@ -43,6 +43,9 @@ total_price = 0
 product_ids = []
 matching_products = []
 # ASK FOR USER INPUT
+store_name = "Perry's Grocery Mart"
+
+print("Welcome to "+ store_name + "! When you are ready to checkout please enter 'DONE' instead of a product identifier.")
 
 product_ids = []
 while True: 
