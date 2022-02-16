@@ -4,4 +4,4 @@
 # download the file shopping_cart.py
 
 
-#come back here and make sure to update everything with proper instructions!
+# come back here and make sure to update everything with proper instructions!

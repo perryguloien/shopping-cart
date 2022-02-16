@@ -42,30 +42,63 @@ def to_usd(my_price):
 #print(products) COME BACK HERE!!!!!!!
 
 # ASK FOR USER INPUT
+matching_products = []
+while True: 
+    product_id = input("Please input a product indentifier.") #> "9" (string)
+    #> "DONE"
+    if product_id == "DONE":
+        break
+    
+    matching_products = [p for p in products if str(p["id"]) == str(product_id)]
+    matching_product = matching_products[0]
+    print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
 
-product_id = input("Please input a product identifier: ")
-print(product_id) #> "9"
-print(type(product_id)) #> str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#print(product_id) #> "9"
+#print(type(product_id)) #> str
 
 # LOOK UP CORRESPONDING PRODUCTS
 
 # print product that has an id attribute equal to "9"
 
-matching_products = []
+# matching_products = []
 
-for x in products:
+#for x in products:
     #if x == 3:
     #    ___.append(x)
     #print(x)
     #print(x["id"])
-    if str(x["id"]) == str(product_id):
+   # if str(x["id"]) == str(product_id):
         # this is a match
-        matching_products.append(x)
+        # matching_products.append(x)
 
-print(matching_products)
+#print(matching_products["name"])
 
 #print the name of the matching product: 
-print(len(matching_products))
-print(type(matching_products))
+#print(len(matching_products))
+#print(type(matching_products))
 
 #LOOK UP CORRESPONDING PRODUCTS
