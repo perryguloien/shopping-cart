@@ -1,4 +1,5 @@
 #shopping-cart.py
+import time #use time module for the receipt
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -43,7 +44,8 @@ total_price = 0
 product_ids = []
 matching_products = []
 # ASK FOR USER INPUT
-store_name = "Perry's Grocery Mart"
+store_name = input("Please enter your name here!")
+store_name = str.title(store_name+"'s Grocery Store")
 
 print("Welcome to "+ store_name + "! When you are ready to checkout please enter 'DONE' instead of a product identifier.")
 
@@ -69,12 +71,18 @@ for product_id in product_ids:
     total_price = total_price + matching_product["price"]
     print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
 
-#def to_usd(total_price):
+
+#FORMATTING AND PRINTING RECEIPT
+print("---------------------------------")
+print(str.upper(store_name))
+print(str.upper("WWW."+store_name+"'S-GROCERY_STORE.COM"))
+print("---------------------------------")
+print("CHECKOUT AT: "+time())
+print("---------------------------------")
+
+
 print("TOTAL PRICE: " + str(to_usd(total_price))) #Format as USD!
     # return f"${total_price:,.2f}" #> $12,000.71
-
-
-
 
 
 
