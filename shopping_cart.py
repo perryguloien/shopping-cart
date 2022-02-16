@@ -43,17 +43,18 @@ def to_usd(my_price):
 total_price = 0 
 # ASK FOR USER INPUT
 matching_products = []
+product_ids = []
 while True: 
     product_id = input("Please input a product indentifier.") #> "9" (string)
     #> "DONE"
     if product_id == "DONE":
         break
     else:
-        matching_products = [p for p in products if str(p["id"]) == str(product_id)]
-        matching_product = matching_products[0]
-        total_price = total_price + matching_product["price"]
-        print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
-
+        # matching_products = [p for p in products if str(p["id"]) == str(product_id)]
+        # matching_product = matching_products[0]
+        # total_price = total_price + matching_product["price"]
+        # print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
+        product_ids.append(product_id)
 # def to_usd(total_price):
 print("TOTAL PRICE: " + str(total_price)) #Format as USD! 
 
