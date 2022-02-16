@@ -39,10 +39,11 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-#print(products) COME BACK HERE!!!!!!!
 total_price = 0 
-# ASK FOR USER INPUT
+product_ids = []
 matching_products = []
+# ASK FOR USER INPUT
+
 product_ids = []
 while True: 
     product_id = input("Please input a product indentifier.") #> "9" (string)
@@ -55,8 +56,20 @@ while True:
         # total_price = total_price + matching_product["price"]
         # print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
         product_ids.append(product_id)
-# def to_usd(total_price):
-print("TOTAL PRICE: " + str(total_price)) #Format as USD! 
+
+# INFO DISPLAY / OUTPUT
+
+# print(selected_ids)
+for product_id in product_ids:
+    matching_products = [p for p in products if str(p["id"]) == str(product_id)]
+    matching_product = matching_products[0]
+    total_price = total_price + matching_product["price"]
+    print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
+
+def to_usd(total_price):
+    print("TOTAL PRICE: " + str(total_price)) #Format as USD!
+    return f"${my_price:,.2f}" #> $12,000.71
+
 
 
 
