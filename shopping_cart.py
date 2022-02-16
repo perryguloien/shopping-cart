@@ -72,7 +72,7 @@ for product_id in product_ids:
     matching_products = [p for p in products if str(p["id"]) == str(product_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
+    # print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
 
 
 #FORMATTING AND PRINTING RECEIPT
@@ -87,9 +87,19 @@ for product_id in product_ids:
     matching_products = [p for p in products if str(p["id"]) == str(product_id)]
     matching_product = matching_products[0]
     print("... " + str(matching_product["name"]) + " " + "("+str(to_usd(matching_product["price"])+")"))
+print("---------------------------------")
 
-print("TOTAL PRICE: " + str(to_usd(total_price))) #Format as USD!
+print("SUBTOTAL: " + str(to_usd(total_price))) #Format as USD!
     # return f"${total_price:,.2f}" #> $12,000.71
+
+tax_rate = total_price*.15 #holding tax there until I do env variable
+print("TAX: "+(str(to_usd(tax_rate))))
+total = tax_rate + total_price
+print("TOTAL: "+(str(to_usd(total))))
+print("---------------------------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("---------------------------------")
+
 
 
 
