@@ -43,27 +43,34 @@ def to_usd(my_price):
 total_price = 0 
 product_ids = []
 matching_products = []
+valid_ids = []
 # ASK FOR USER INPUT
 player_name = input("Please enter your name here! ")
 store_name = (str.title(player_name)+"'s Grocery Store")
 # DATE TIME SETUP: 
 now = datetime.now()
 dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
+for i in products:
+    valid_ids.append(str(i["id"])) 
+
 
 print("Welcome to "+ store_name + "! When you are ready to checkout please enter 'DONE' instead of a product identifier. ")
 
 product_ids = []
 while True: 
-    product_id = input("Please input a product indentifier. ") #> "9" (string)
+    product_id = input("Please input a product indentifier between 1 and 20. ") #> "9" (string)
     #> "DONE"
     if product_id == "DONE":
         break
-    else:
+    elif product_id in valid_ids:
         # matching_products = [p for p in products if str(p["id"]) == str(product_id)]
         # matching_product = matching_products[0]
         # total_price = total_price + matching_product["price"]
         # print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
         product_ids.append(product_id)
+    else:
+        print("That was an invalid product ID. Please try again!")
+
 
 # INFO DISPLAY / OUTPUT
 
