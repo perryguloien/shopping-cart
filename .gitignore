@@ -1,4 +1,9 @@
+# this is the ".gitignore" file...
 # Byte-compiled / optimized / DLL files
+
+# ignore environment variables in the ".env" file:
+.env
+
 __pycache__/
 *.py[cod]
 *$py.class

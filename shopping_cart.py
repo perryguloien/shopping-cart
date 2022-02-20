@@ -1,5 +1,16 @@
 #shopping-cart.py
 from datetime import datetime #help from programiz.com
+import os
+
+# this is the "my-secure-project/my_script.py" file...
+import os
+from dotenv import load_dotenv
+
+load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
+
+# ... where they can be accessed / read via the os module as usual:
+tax = float(os.getenv("TAX_RATE"))
+print(tax)
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -99,9 +110,9 @@ print("---------------------------------")
 print("SUBTOTAL: " + str(to_usd(total_price))) #Format as USD!
     # return f"${total_price:,.2f}" #> $12,000.71
 
-tax_rate = total_price*.15 #holding tax there until I do env variable
-print("TAX: "+(str(to_usd(tax_rate))))
-total = tax_rate + total_price
+tax_value = total_price*tax #should be float from env variable
+print("TAX: "+(str(to_usd(tax_value))))
+total = tax_value + total_price
 print("TOTAL: "+(str(to_usd(total))))
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
