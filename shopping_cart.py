@@ -152,36 +152,13 @@ else:
     #print("MESSAGE:", type(message))
 
     try:
-       response = client.send(message)
-       # print("RESPONSE:", type(response))
-       # print(response.status_code)
-      #  print(response.body)
-       # print(response.headers)
+        response = client.send(message)
+        print("RESPONSE:", type(response))
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
 
     except Exception as err:
-       # print(type(err))
-       # print(err)
+       print(type(err))
+       print(err)
 
-    #print(product_id) #> "9"
-    #print(type(product_id)) #> str
-
-    # LOOK UP CORRESPONDING PRODUCTS
-
-    # print product that has an id attribute equal to "9"
-
-    # matching_products = []
-
-    #for x in products:
-        #if x == 3:
-        #    ___.append(x)
-        #print(x)
-        #print(x["id"])
-    # if str(x["id"]) == str(product_id):
-            # this is a match
-            # matching_products.append(x)
-
-    #print(matching_products["name"])
-
-    #print the name of the matching product: 
-    #print(len(matching_products))
-    #print(type(matching_products))
