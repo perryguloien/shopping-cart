@@ -3,6 +3,8 @@
 
 # ignore environment variables in the ".env" file:
 .env
+data/products.csv
+!data/default_products.csv
 
 __pycache__/
 *.py[cod]

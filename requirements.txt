@@ -3,3 +3,4 @@ conda create -n shopping-env python=3.8
 conda activate shopping-env
 pip install -r requirements.txt # (after specifying desired packages inside)
 pip install python-dotenv
+pip install pandas

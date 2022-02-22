@@ -16,6 +16,8 @@
     # SENDER_ADDRESS="Please put the email of your 'customer' or the desired receipient of the receipt here"
     # SENDGRID_TEMPLATE_ID="Please put the template ID for your desired receipt here. Instructions on how to create this template are below"
 
+# Once you run the code you will be asked whether you want to use your own csv data or the default data. If you would like to use your own data, please first copy the 'default_products.csv' file in 'data' and input your own product names into it. Rename the file "data/products.csv", as this is the file name that the code will draw from for a list of products. 
+
 # In your template on sendgrid, please copy and paste the HTML code below: 
 # INSERT HTML CODE HERE -- COULD NOT COMPLETE, WAS LOCKED OUT
 
