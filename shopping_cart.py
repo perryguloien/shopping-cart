@@ -23,7 +23,6 @@ if decision=="csv":
     df = read_csv(csv_filepath)
     products = []
     products = pd.read_csv("products.csv", header=1,index_col=1,squeeze=True).to_dict()
-    print(products)
     df.to_dict("products")
 
 else:
@@ -99,11 +98,14 @@ while True:
 
 
 # INFO DISPLAY / OUTPUT
-
+email_products = []
+html_list_items = ""
 # print(selected_ids)
 for product_id in product_ids:
     matching_products = [p for p in products if str(p["id"]) == str(product_id)]
     matching_product = matching_products[0]
+    email_products.append(matching_product)
+    html_list_items += f"You ordered: {email_products}" 
     total_price = total_price + matching_product["price"]
     # print("SELECTED PRODUCT: " + str(matching_product["name"]) + " " + str(matching_product["price"]))
 
@@ -116,6 +118,7 @@ print("---------------------------------")
 print("CHECKOUT AT: "+dt_string)
 print("---------------------------------")
 print("SELECTED PRODUCTS:")
+
 for product_id in product_ids:
     matching_products = [p for p in products if str(p["id"]) == str(product_id)]
     matching_product = matching_products[0]
@@ -142,14 +145,16 @@ else:
     SENDGRID_TEMPLATE_ID = os.getenv("SENDGRID_TEMPLATE_ID", default="OOPS, please set env var called 'SENDGRID_TEMPLATE_ID'")
     SENDER_ADDRESS = os.getenv("SENDER_ADDRESS", default="OOPS, please set env var called 'SENDER_ADDRESS'")
 
+
     # this must match the test data structure
     template_data = {
+        
         "subtotal_price_usd": str(to_usd(total_price)),
         "tax_usd": str(to_usd(tax_value)),
         "total_price_usd": str(to_usd(total)),
         "date": now.strftime("%m/%d/%Y"),
         "time":now.strftime("%H:%M:%S"),
-        "products": "hello"
+        "products":email_products
     
     } 
     # or construct this dictionary dynamically based on the results of some other process :-D

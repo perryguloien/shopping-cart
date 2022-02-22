@@ -19,5 +19,36 @@
 # Once you run the code you will be asked whether you want to use your own csv data or the default data. If you would like to use your own data, please first copy the 'default_products.csv' file in 'data' and input your own product names into it. Rename the file "data/products.csv", as this is the file name that the code will draw from for a list of products. 
 
 # In your template on sendgrid, please copy and paste the HTML code below: 
-# INSERT HTML CODE HERE -- COULD NOT COMPLETE, WAS LOCKED OUT
+#
+ <!-- <html>
+    
+    <img src="https://www.shareicon.net/data/128x128/2016/05/04/759867_food_512x512.png">
 
+<h3>Hello this is your receipt!</h3>
+<p>Checkout Date: {{date}}</p>
+<p>Checkout Time: {{time}}<p>
+
+<ul>
+{{#each products}}
+	<li>You ordered: ... {{this.name}}</li>
+{{/each}}
+</ul>
+
+<p>Subtotal: {{subtotal_price_usd}}</p>
+<p>Tax: {{tax_usd}}</p>
+<p>Total: {{total_price_usd}}</p>
+      <div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5">
+        
+        <p style="font-size:12px; line-height:20px;">
+          <a class="Unsubscribe--unsubscribeLink" href="{{{unsubscribe}}}" target="_blank" style="font-family:sans-serif;text-decoration:none;">
+            Unsubscribe
+          </a>
+          -
+          <a href="{{{unsubscribe_preferences}}}" target="_blank" class="Unsubscribe--unsubscribePreferences" style="font-family:sans-serif;text-decoration:none;">
+            Unsubscribe Preferences
+          </a>
+        </p>
+      </div>
+    </body>
+  </html>
+ -->
