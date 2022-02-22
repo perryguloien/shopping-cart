@@ -19,10 +19,11 @@ tax = float(os.getenv("TAX_RATE"))
 decision = input("If you would like to use your csv file for products, input 'csv' here. If you would like to use the default list, input 'list'.")
 if decision=="csv":
     from pandas import read_csv
-    csv_filepath = os.path.join(os.path.dirname(__file__), "data", "products.csv")
-    x = read_csv(csv_filepath)
-    products = {}
+    csv_filepath = "products.csv"
+    df = read_csv(csv_filepath)
+    products = []
     products = pd.read_csv("products.csv", header=1,index_col=1,squeeze=True).to_dict()
+    print(products)
 
 else:
     products = [

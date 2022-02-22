@@ -5,6 +5,7 @@
 .env
 data/products.csv
 !data/default_products.csv
+products.csv
 
 __pycache__/
 *.py[cod]
