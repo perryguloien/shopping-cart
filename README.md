@@ -14,7 +14,7 @@ Before running the program please create a .env file and input the following:
     TAX_RATE="Desired tax rate"
     SENDGRID_API_KEY="Please put your sendgrid API Key here which can be found after creating an account"
     SENDER_ADDRESS="Please put the email of your 'customer' or the desired receipient of the receipt here"
-    SENDGRID_TEMPLATE_ID="Please put the template ID for your desired receipt here. Instructions on how to create this template are below"
+    SENDGRID_TEMPLATE_ID="Please put the template ID for your desired receipt here. Instructions on how to create this template are below:
 
 Once you run the code you will be asked whether you want to use your own csv data or the default data. If you would like to use your own data, please first copy the 'default_products.csv' file in 'data' and input your own product names into it. Rename the file "data/products.csv", as this is the file name that the code will draw from for a list of products. 
 
