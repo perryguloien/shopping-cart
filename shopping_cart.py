@@ -24,6 +24,7 @@ if decision=="csv":
     products = []
     products = pd.read_csv("products.csv", header=1,index_col=1,squeeze=True).to_dict()
     print(products)
+    df.to_dict("products")
 
 else:
     products = [
