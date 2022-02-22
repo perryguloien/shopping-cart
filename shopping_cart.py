@@ -23,7 +23,6 @@ if decision=="csv":
     x = read_csv(csv_filepath)
     products = {}
     products = pd.read_csv("products.csv", header=1,index_col=1,squeeze=True).to_dict()
-    print(products)
 
 else:
     products = [
